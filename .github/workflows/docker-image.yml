@@ -24,9 +24,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-        with: 
-          ref: main
-          path: hello
+
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -35,11 +33,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Build de uma imagem
         run: | 
-          ls -all
-          ls -la hello
-          cd hello
           docker build -t aula230926rfacr.azurecr.io:ricardov1 .
           docker login -u ${{ secrets.UTILIZADOR }} -p ${{ secrets.SEGREDO }} aula230926rfacr.azurecr.io
           docker push aula230926rfacr.azurecr.io:ricardov1
-          echo Add other actions to build,
-          echo test, and deploy your project
+
