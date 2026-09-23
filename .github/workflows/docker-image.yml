@@ -38,7 +38,7 @@ jobs:
           ls -all
           ls -la hello
           cd hello
-          docker build -t aula230926rfacr.azurecr.io:ricardov1
+          docker build -t aula230926rfacr.azurecr.io:ricardov1 .
           docker login -u ${{ secrets.UTILIZADOR }} -p ${{ secrets.SEGREDO }} aula230926rfacr.azurecr.io
           docker push aula230926rfacr.azurecr.io:ricardov1
           echo Add other actions to build,
