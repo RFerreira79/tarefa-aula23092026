@@ -33,7 +33,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Build de uma imagem
         run: | 
-          docker build -t aula230926rfacr.azurecr.io:ricardov1 .
+          docker build -t aula230926rfacr.azurecr.io/ricardo:v1 .
           docker login -u ${{ secrets.UTILIZADOR }} -p ${{ secrets.SEGREDO }} aula230926rfacr.azurecr.io
-          docker push aula230926rfacr.azurecr.io:ricardov1
+          docker push aula230926rfacr.azurecr.io/ricardo:v1
 
